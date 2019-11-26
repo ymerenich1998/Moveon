@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_17_202209) do
+ActiveRecord::Schema.define(version: 2019_11_26_115324) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -38,6 +38,30 @@ ActiveRecord::Schema.define(version: 2019_11_17_202209) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "customers", force: :cascade do |t|
+    t.string "short_name"
+    t.string "full_name"
+    t.string "address"
+    t.string "phone"
+    t.string "user_name"
+    t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "service_histories", force: :cascade do |t|
+    t.datetime "start_date"
+    t.integer "mileage"
+    t.string "service_name"
+    t.integer "time_spent"
+    t.integer "amount"
+    t.integer "price"
+    t.string "customer_name"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -48,6 +72,20 @@ ActiveRecord::Schema.define(version: 2019_11_17_202209) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string "mark"
+    t.string "model"
+    t.string "colour"
+    t.string "reg_id"
+    t.integer "mileage"
+    t.string "customer_name"
+    t.string "body_num"
+    t.integer "reg_year"
+    t.datetime "purchase_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
