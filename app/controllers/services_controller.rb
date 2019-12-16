@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ServicesController < ApplicationController
+  before_action :authenticate_worker!
   before_action :set_service, only: %i[show edit update destroy]
 
   # GET /services

@@ -1,15 +1,19 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :workers
+  devise_for :workers, skip: [:registrations], controllers: {
+    sessions: 'workers/sessions'
+  }
+  as :worker do
+    get 'workers/edit' => 'devise/registrations#edit', as: 'edit_worker_registration'
+    put 'workers' => 'devise/registrations#update', as: 'worker_registration'
+  end
   resource :my, except: %i[new create index destroy]
-  resources :users, only: [:show]
+  resources :workers, only: %i[show index]
 
   resources :customers
   resources :vehicles
   resources :orders
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   root 'pages#index'
 
   resources :services
