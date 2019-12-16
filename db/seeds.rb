@@ -11,7 +11,7 @@
 ['rik@gmail.com', 'admin@example.com', 'dius@gmail.com'].each do |email|
   Worker.find_or_create_by(email: email) do |worker|
     worker.password = '123456'
-    worker.email = email.split('@').first.to_s
+    worker.full_name = email.split('@').first.to_s
     worker.password_confirmation
   end
 end
