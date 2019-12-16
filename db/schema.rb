@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_115324) do
+ActiveRecord::Schema.define(version: 2019_12_16_190754) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -39,14 +39,23 @@ ActiveRecord::Schema.define(version: 2019_11_26_115324) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string "short_name"
     t.string "full_name"
-    t.string "address"
     t.string "phone"
-    t.string "user_name"
-    t.datetime "date"
+    t.string "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_owners_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
   end
 
   create_table "service_histories", force: :cascade do |t|
@@ -75,15 +84,11 @@ ActiveRecord::Schema.define(version: 2019_11_26_115324) do
   end
 
   create_table "vehicles", force: :cascade do |t|
-    t.string "mark"
+    t.string "vin"
     t.string "model"
-    t.string "colour"
-    t.string "reg_id"
-    t.integer "mileage"
-    t.string "customer_name"
-    t.string "body_num"
-    t.integer "reg_year"
-    t.datetime "purchase_date"
+    t.string "mark"
+    t.string "year"
+    t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,23 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  mark: MyString
+  vin: MyString
   model: MyString
-  colour: MyString
-  reg_id: MyString
-  mileage: 1
-  customer_name: MyString
-  body_num: MyString
-  reg_year: 1
-  purchase_date: 2019-11-26 11:42:52
+  mark: MyString
+  year: MyString
+  color: MyString
 
 two:
-  mark: MyString
+  vin: MyString
   model: MyString
-  colour: MyString
-  reg_id: MyString
-  mileage: 1
-  customer_name: MyString
-  body_num: MyString
-  reg_year: 1
-  purchase_date: 2019-11-26 11:42:52
+  mark: MyString
+  year: MyString
+  color: MyString
