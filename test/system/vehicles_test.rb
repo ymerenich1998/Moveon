@@ -14,7 +14,7 @@ class VehiclesTest < ApplicationSystemTestCase
     visit vehicles_url
     click_on "New Vehicle"
 
-    fill_in "Color", with: @vehicle.color
+    fill_in "Colour", with: @vehicle.colour
     fill_in "Mark", with: @vehicle.mark
     fill_in "Model", with: @vehicle.model
     fill_in "Vin", with: @vehicle.vin
@@ -29,7 +29,7 @@ class VehiclesTest < ApplicationSystemTestCase
     visit vehicles_url
     click_on "Edit", match: :first
 
-    fill_in "Color", with: @vehicle.color
+    fill_in "Colour", with: @vehicle.colour
     fill_in "Mark", with: @vehicle.mark
     fill_in "Model", with: @vehicle.model
     fill_in "Vin", with: @vehicle.vin

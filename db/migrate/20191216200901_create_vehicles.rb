@@ -5,7 +5,7 @@ class CreateVehicles < ActiveRecord::Migration[5.2]
       t.string :model
       t.string :mark
       t.string :year
-      t.string :color
+      t.string :colour
 
       t.timestamps
     end

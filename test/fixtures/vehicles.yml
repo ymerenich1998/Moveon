@@ -5,11 +5,11 @@ one:
   model: MyString
   mark: MyString
   year: MyString
-  color: MyString
+  colour: MyString
 
 two:
   vin: MyString
   model: MyString
   mark: MyString
   year: MyString
-  color: MyString
+  colour: MyString

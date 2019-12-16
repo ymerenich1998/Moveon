@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ServiceHistoryTest < ActiveSupport::TestCase
+class OrderTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

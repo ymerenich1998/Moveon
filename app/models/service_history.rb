@@ -1,2 +1,0 @@
-class ServiceHistory < ApplicationRecord
-end
