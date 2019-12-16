@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_190754) do
+ActiveRecord::Schema.define(version: 2019_12_16_202132) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -46,27 +46,19 @@ ActiveRecord::Schema.define(version: 2019_12_16_190754) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "owners", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+  create_table "orders", force: :cascade do |t|
+    t.integer "worker_id"
+    t.integer "vehicle_id"
+    t.integer "service_id"
+    t.integer "customer_id"
+    t.string "date"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_owners_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
   end
 
-  create_table "service_histories", force: :cascade do |t|
-    t.datetime "start_date"
-    t.integer "mileage"
-    t.string "service_name"
-    t.integer "time_spent"
-    t.integer "amount"
-    t.integer "price"
-    t.string "customer_name"
-    t.datetime "end_date"
+  create_table "services", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -88,9 +80,21 @@ ActiveRecord::Schema.define(version: 2019_12_16_190754) do
     t.string "model"
     t.string "mark"
     t.string "year"
-    t.string "color"
+    t.string "colour"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "workers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_workers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_workers_on_reset_password_token", unique: true
   end
 
 end
