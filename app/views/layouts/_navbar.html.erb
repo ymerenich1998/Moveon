@@ -14,15 +14,18 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Page</a>
                 </li>
+                <% if worker_signed_in?%>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Page</a>
+                    <%= link_to "Профіль", my_path,class:"nav-link"%>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Page</a>
+                  <%= link_to "LOGOUT", destroy_worker_session_path, method: :delete, class: "nav-link" %>
                 </li>
+                <% else %>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Page</a>
+                  <%= link_to "SIGN IN", new_worker_session_path,class:"nav-link"%>
                 </li>
+                <% end %>
             </ul>
         </div>
     </div>
