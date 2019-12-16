@@ -2,6 +2,9 @@
 
 Rails.application.routes.draw do
   devise_for :workers
+  resource :my, except: %i[new create index destroy]
+  resources :users, only: [:show]
+
   resources :customers
   resources :vehicles
   resources :orders

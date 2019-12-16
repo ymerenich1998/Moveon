@@ -12,13 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :service_id %>
-    <%= form.number_field :service_id %>
+    <%= form.label :worker_id %>
+    <%= form.number_field :worker_id %>
   </div>
 
   <div class="field">
@@ -27,8 +22,18 @@
   </div>
 
   <div class="field">
+    <%= form.label :service_id %>
+    <%= form.number_field :service_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vehicle_id %>
+    <%= form.number_field :vehicle_id %>
+  </div>
+
+  <div class="field">
     <%= form.label :date %>
-    <%= form.text_field :date %>
+    <%= form.date_field :date %>
   </div>
 
   <div class="field">
