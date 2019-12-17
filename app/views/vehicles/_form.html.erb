@@ -1,4 +1,4 @@
-<%= form_with(model: vehicle, local: true) do |form| %>
+<%= simple_form_for @vehicle do |form| %>
   <% if vehicle.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
@@ -12,28 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :vin %>
-    <%= form.text_field :vin %>
+    <%= form.input :vin %>
   </div>
 
   <div class="field">
-    <%= form.label :model %>
-    <%= form.text_field :model %>
+    <%= form.input :model %>
   </div>
 
   <div class="field">
-    <%= form.label :mark %>
-    <%= form.text_field :mark %>
+    <%= form.input :mark %>
   </div>
 
   <div class="field">
-    <%= form.label :year %>
-    <%= form.text_field :year %>
+    <%= form.input :year %>
   </div>
 
   <div class="field">
-    <%= form.label :colour %>
-    <%= form.text_field :colour %>
+    <%= form.input :colour %>
   </div>
 
   <div class="actions">

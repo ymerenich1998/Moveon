@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= form.input :worker_id %>
+    <%= form.association :worker,label_method: :full_name, value_method: :id %>
   </div>
 
   <div class="field">
-    <%= form.input :customer_id %>
+    <%= form.association :customer %>
   </div>
 
   <div class="field">
-    <%= form.input :service_id %>
+    <%= form.association :service %>
   </div>
 
   <div class="field">
-    <%= form.input :vehicle_id %>
+    <%= form.association :vehicle %>
   </div>
 
   <div class="field">
