@@ -72,6 +72,7 @@ span {
     align-items: stretch;
 }
 
+
 #sidebar {
   min-width: 250px;
   max-width: 250px;
@@ -82,6 +83,9 @@ span {
     min-width: 80px;
     max-width: 80px;
     text-align: center;
+    .nav-text {
+      display: none;
+    }
     .sidebar-header h3,
     .CTAs {
         display: none;
@@ -105,6 +109,9 @@ span {
         transform: translateX(50%);
       }
     }
+  }
+  .nav-text {
+    display: contents;
   }
   ul{
     &.components {
@@ -220,6 +227,7 @@ ul {
     #sidebar.active {
         margin-left: 0 !important;
     }
+
     #sidebar .sidebar-header h3,
     #sidebar .CTAs {
         display: none;

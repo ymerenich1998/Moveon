@@ -2,7 +2,7 @@
 
 <h1>Marks</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,7 +16,7 @@
         <td><%= mark.name %></td>
         <td><%= link_to 'Show', mark %></td>
         <td><%= link_to 'Edit', edit_mark_path(mark) %></td>
-        <td><%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Mark', new_mark_path %>
+<%= link_to 'New Mark', new_mark_path, class:"btn btn-success" %>
