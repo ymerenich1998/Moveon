@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :vehicle_marks
+  resources :vehicle_models
   devise_for :workers, skip: [:registrations], controllers: {
     sessions: 'workers/sessions'
   }

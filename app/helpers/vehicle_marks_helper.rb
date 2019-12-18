@@ -1,0 +1,2 @@
+module VehicleMarksHelper
+end
