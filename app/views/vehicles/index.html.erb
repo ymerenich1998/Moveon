@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Number</th>
       <th>Vin</th>
       <th>Model</th>
       <th>Mark</th>
@@ -17,9 +18,10 @@
   <tbody>
     <% @vehicles.each do |vehicle| %>
       <tr>
+        <td><%= vehicle.number %></td>
         <td><%= vehicle.vin %></td>
-        <td><%= vehicle.model %></td>
-        <td><%= vehicle.mark %></td>
+        <td><%= vehicle.model.name %></td>
+        <td><%= vehicle.model.mark.name %></td>
         <td><%= vehicle.year %></td>
         <td><%= vehicle.colour %></td>
         <td><%= link_to 'Show', vehicle %></td>

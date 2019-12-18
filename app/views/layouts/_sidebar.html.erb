@@ -1,25 +1,41 @@
 
   <nav id="sidebar">
       <div class="sidebar-header">
-          <h3>MoveOn</h3>
+          <h3>
+            MoveOn
+          </h3>
           <strong>MO</strong>
+          <div class="dropdown">
+
+
+          </div>
       </div>
 
       <ul class="list-unstyled components">
           <li>
-            <%= link_to "Головна" , root_path %>
+            <%= link_to  root_path  do%><%=fa_icon "home"%>Головна<%end%>
           </li>
           <li>
-            <%= link_to "Авто" , vehicles_path %>
+            <%= link_to vehicles_path do%><%=fa_icon "car"%>Авто<%end%>
           </li>
           <li>
-              <%= link_to "Послуги" , services_path %>
+            <%= link_to customers_path do%><%=fa_icon "portrait"%>Клієнти<%end%>
           </li>
           <li>
-            <%= link_to "Замовлення" , orders_path %>
+            <%= link_to orders_path do%><%=fa_icon "concierge-bell"%>Замовлення<%end%>
           </li>
           <li>
-            <%= link_to "Працівники" , root_path %>
+            <%= link_to workers_path do%><%=fa_icon "user-tie"%>Працівники<%end%>
+          </li>
+          <li>
+            <a class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%=fa_icon "ellipsis-v"%>Інше
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to services_path, class:"dropdown-item" do%><%=fa_icon "cogs"%>Послуги<%end%>
+              <%= link_to marks_path, class:"dropdown-item" do%><%=fa_icon "trademark"%>Марки<%end%>
+              <%= link_to models_path, class:"dropdown-item" do%><%=fa_icon "car-side"%>Моделі<%end%>
+            </div>
           </li>
       </ul>
   </nav>

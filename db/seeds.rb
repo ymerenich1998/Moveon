@@ -16,4 +16,11 @@
   end
 end
 
-pp Worker.all
+Mark.create([
+              {
+                name: 'Audi'
+              },
+              {
+                name: 'Honda'
+              }
+            ])
