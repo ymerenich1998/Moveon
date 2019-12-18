@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_211056) do
 
   create_table "vehicles", force: :cascade do |t|
     t.string "vin"
+    t.string "number"
     t.string "model"
     t.string "mark"
     t.string "year"

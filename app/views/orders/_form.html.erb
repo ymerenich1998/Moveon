@@ -16,15 +16,15 @@
   </div>
 
   <div class="field">
-    <%= form.association :customer %>
+    <%= form.association :customer,label_method: :full_name, value_method: :id %>
   </div>
 
   <div class="field">
-    <%= form.association :service %>
+    <%= form.association :service,label_method: :name, value_method: :id %>
   </div>
 
   <div class="field">
-    <%= form.association :vehicle %>
+    <%= form.association :vehicle,label_method: :name, value_method: :id %>
   </div>
 
   <div class="field">
