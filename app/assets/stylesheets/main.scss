@@ -1,6 +1,11 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed&display=swap');
 
 *{
+
+  font-family: 'Fira Sans Condensed', sans-serif;
+
+
   --sidbar: #211f1f;
   --test: #6d7fcc;
   --butt: #123;
@@ -9,10 +14,20 @@
   --link: #ecece5;
   --linkh: #123;
   --alttext: #fff;
+
+  a{
+    &:hover{
+      color: var(--test);
+    }
+  }
+  li {
+     list-style: none;
+   }
+
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fira Sans Condensed', sans-serif;
     background: #fafafa;
     svg{
       width: 18px!important;
@@ -21,8 +36,14 @@ body {
     }
 }
 
+.table{
+  .thead-dark, th{
+    background-color: var(--sidbar)!important;
+  }
+}
+
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fira Sans Condensed', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -200,8 +221,10 @@ ul {
 .btn-moveon{
   color: var(--alttext);
   background-color: var(--test);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   &:hover{
-
+    background-color: var(--sidbar);
+    color: var(--alttext);
   }
 }
 

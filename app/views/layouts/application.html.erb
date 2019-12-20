@@ -15,6 +15,10 @@
     <div class="wrapper">
       <%= render 'layouts/sidebar'%>
       <div id="content">
+        <button type="button" id="sidebarCollapse" class="btn btn-moveon">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
         <%# render 'layouts/navbar'%>
         <%= yield %>
       </div>

@@ -1,19 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Full name:</strong>
-  <%= @customer.full_name %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @customer.phone %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @customer.desc %>
-</p>
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<div class="jumbotron">
+ <div class="row text-center text-md-left">
+     <div class="col-12 col-md-5 ">
+         <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img">
+     </div>
+     <div class=" col-12 col-md-7">
+         <div class="container" style="border-bottom:1px solid black">
+           <h2><%= @customer.full_name %></h2>
+         </div>
+        <br>
+         <ul class="container details">
+           <li><p><i class="fas fa-phone-alt"></i><%= @customer.phone %></p></li>
+           <li><p><i class="fas fa-map-marker-alt"></i><%= @customer.address %></p></li>
+           <li><p><i class="fas fa-info-circle"></i><%= @customer.desc %></p></li>
+         </ul>
+     </div>
+ </div>
+<div class="text-center">
+  <%= link_to 'Edit', edit_customer_path(@customer) %> |
+  <%= link_to 'Back', customers_path %>
+</div>
