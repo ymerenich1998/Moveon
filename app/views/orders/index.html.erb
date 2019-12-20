@@ -22,7 +22,7 @@
         <td><%= order.service_id %></td>
         <td><%= order.customer_id %></td>
         <td><%= order.vehicle_id %></td>
-        <td><%= order.date %></td>
+        <td><%= order.date.to_formatted_s(:short)   %></td>
         <td><%= order.status %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>

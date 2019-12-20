@@ -7,7 +7,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.integer :vehicle_id
       t.integer :service_id
       t.integer :customer_id
-      t.string :date
+      t.date :date
       t.integer :status
 
       t.timestamps

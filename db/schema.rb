@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_183254) do
     t.integer "vehicle_id"
     t.integer "service_id"
     t.integer "customer_id"
-    t.string "date"
+    t.date "date"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

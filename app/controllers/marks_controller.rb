@@ -11,10 +11,11 @@ class MarksController < ApplicationController
 
   # GET /marks/1
   # GET /marks/1.json
-  def show; end
+  def show
+    @models = @mark.models
+  end
 
   def select
-    pp @mark
     @models = @mark.models
   end
 
