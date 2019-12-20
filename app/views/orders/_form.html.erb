@@ -6,15 +6,27 @@
 
 <%= f.association :customer,label_method: :full_name, value_method: :id %>
 
+<%f.simple_fields_for:customer do |customer| %>
+  <%= customer.input :full_name %>
+
+  <%= customer.input :phone %>
+
+  <%= customer.input :desc %>
+
+  <%= customer.input :address %>
+<%end%>
+
 <%= f.association :service,label_method: :name, value_method: :id %>
 
 <%= f.association :vehicle,label_method: :name, value_method: :id %>
 
-<%= f.input :date %>
+<%= f.input :date, as: :date %>
 
 <%= f.input :status %>
 
 <div class="actions">
-  <%= f.submit class: "btn btn-moveon"%> or <%= link_to 'Back', orders_path %>
+<%= f.submit class: "btn btn-moveon"%>
+or
+<%= link_to 'Back', orders_path %>
 </div>
 <% end %>

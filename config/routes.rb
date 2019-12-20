@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resources :marks
+  get '/mark/select', to: 'marks#select'
   resources :models
 
   devise_for :workers, skip: [:registrations], controllers: {
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
   resources :orders
   root 'pages#index'
 
-  resources :services
+  resources :services, except: [:show]
   # resources :boxes
   # resources :events
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

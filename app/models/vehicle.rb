@@ -7,6 +7,6 @@ class Vehicle < ApplicationRecord
   belongs_to :model
 
   def name
-    "#{mark} #{model}(#{number})"
+    "#{model.mark.name} #{model.name} (#{number})"
   end
 end

@@ -7,16 +7,17 @@
      </div>
      <div class=" col-12 col-md-8">
          <div class="container" style="border-bottom:1px solid black">
-           <h2><%= @vehicle.mark %> <%= @vehicle.model %> <%= @vehicle.year %></h2>
+           <h2><%= @vehicle.model.mark.name %> <%= @vehicle.model.name %> <%= @vehicle.year %></h2>
          </div>
         <br>
          <ul class="container details">
-           <li><p><i>Vin code:</i><%= @vehicle.vin %></p></li>
-           <li><p><i>Color:</i><%= @vehicle.colour %></p></li>
+            <li><p><i>Number: </i> <%= @vehicle.number %></p></li>
+           <li><p><i>Vin code: </i> <%= @vehicle.vin %></p></li>
+           <li><p><i>Color: </i> <%= @vehicle.colour %></p></li>
          </ul>
      </div>
  </div>
 <div class="text-center">
-  <%= link_to 'Edit', edit_customer_path(@customer) %> |
-  <%= link_to 'Back', customers_path %>
+  <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+  <%= link_to 'Back', vehicles_path %>
 </div>

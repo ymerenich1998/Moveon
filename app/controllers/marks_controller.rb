@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class MarksController < ApplicationController
-  before_action :set_mark, only: [:show, :edit, :update, :destroy]
+  before_action :set_mark, only: %i[select show edit update destroy]
 
   # GET /marks
   # GET /marks.json
@@ -9,7 +11,11 @@ class MarksController < ApplicationController
 
   # GET /marks/1
   # GET /marks/1.json
-  def show
+  def show; end
+
+  def select
+    pp @mark
+    @models = @mark.models
   end
 
   # GET /marks/new
@@ -18,8 +24,7 @@ class MarksController < ApplicationController
   end
 
   # GET /marks/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /marks
   # POST /marks.json
@@ -62,13 +67,14 @@ class MarksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_mark
-      @mark = Mark.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def mark_params
-      params.require(:mark).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_mark
+    @mark = Mark.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def mark_params
+    params.require(:mark).permit(:name)
+  end
 end
