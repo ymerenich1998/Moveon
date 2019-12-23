@@ -18,23 +18,24 @@
 <table class="table text-center">
   <thead class="thead-dark">
     <tr>
+      <th style="width: 8%"></th>
       <th>Number</th>
       <th>Vin</th>
       <th>Year</th>
       <th>Colour</th>
-      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @vehicles.each do |vehicle| %>
       <tr>
+        <td>
+          <%= link_to fa_icon("pen"), edit_vehicle_path(vehicle) %> <%= link_to fa_icon("trash"), vehicle, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
         <td><%=link_to vehicle.number ,vehicle %></td>
         <td><%= vehicle.vin %></td>
         <td><%= vehicle.year %></td>
         <td><%= vehicle.colour %></td>
-        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
-        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

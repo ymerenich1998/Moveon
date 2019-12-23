@@ -5,17 +5,18 @@
 <table class="table text-center">
   <thead class="thead-dark">
     <tr>
+      <th style="width: 8%"></th>
       <th>Name</th>
-      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @services.each do |service| %>
       <tr>
+        <td>
+          <%= link_to fa_icon("pen"), edit_service_path(service) %> <%= link_to fa_icon("trash"), service, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
         <td><%= link_to service.name, service  %></td>
-        <td><%= link_to 'Edit', edit_service_path(service) %></td>
-        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

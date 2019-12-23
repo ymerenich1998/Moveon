@@ -5,17 +5,18 @@
 <table class="table text-center">
   <thead class="thead-dark">
     <tr>
+      <th style="width: 8%"></th>
       <th>Name</th>
-      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @marks.each do |mark| %>
       <tr>
+        <td>
+          <%= link_to fa_icon("pen"), edit_mark_path(mark) %> <%= link_to fa_icon("trash"), mark, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
         <td><%=link_to mark.name, mark %></td>
-        <td><%= link_to 'Edit', edit_mark_path(mark) %></td>
-        <td><%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

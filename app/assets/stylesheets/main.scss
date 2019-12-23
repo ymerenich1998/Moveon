@@ -40,6 +40,15 @@ body {
   .thead-dark, th{
     background-color: var(--sidbar)!important;
   }
+  a{
+    color: var(--text);
+    &:hover,
+    &:focus {
+        color: var(--test);
+        text-decoration: none;
+        transition: all 0.8s;
+    }
+  }
 }
 
 p {
