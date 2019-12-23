@@ -53,20 +53,20 @@ end
     full_name: 'Vasya Pypkin',
     phone: "0999999999",
     address: "Minauska",
-    des: "Temp"
+    desc: "Temp"
   },
   {
     full_name: 'name2',
     phone: "",
     address: "",
-    des: ""
+    desc: ""
   },
   {
     full_name: 'name1',
     phone: "",
     address: "",
-    des: ""
+    desc: ""
   },
 ].each do |customer|
-  Customer.find_or_create_by(full_name: customer[:full_name],phone: customer[:phone],address: customer[:address], des: customer[:des])
+  Customer.find_or_create_by(full_name: customer[:full_name],phone: customer[:phone],address: customer[:address], desc: customer[:desc])
 end

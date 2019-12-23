@@ -6,7 +6,6 @@
       <th>Phone</th>
       <th>Address</th>
       <th>Speciality</th>
-      <th></th>
     </tr>
   </thead>
 
@@ -17,7 +16,6 @@
         <td><%= worker.phone %></td>
         <td><%= worker.address %></td>
         <td><%= worker.speciality %></td>
-        <td><%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

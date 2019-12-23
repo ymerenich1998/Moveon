@@ -13,18 +13,18 @@
 <table class="table text-center">
   <thead class="thead-dark">
     <tr>
+      <th style="width: 8%"></th>
       <th>Name</th>
-      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @models.each do |model| %>
       <tr>
-        <td><%=link_to model.name, model %></td>
-        <td><%= link_to 'Edit', edit_model_path(model) %></td>
-        <td><%= link_to 'Destroy', model, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
-      </tr>
+        <td>
+          <%= link_to fa_icon("pen"), edit_model_path(model) %> <%= link_to fa_icon("trash"), model, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+        <td><%=link_to model.name, model %></td></tr>
     <% end %>
   </tbody>
 </table>
