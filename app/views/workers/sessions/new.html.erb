@@ -1,23 +1,17 @@
 <h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.input :login, autofocus: true, autocomplete: "email or phone", class:"form-control", placeholder: "Email/Phone" %>
-  </div>
 
-  <div class="field">
+    <%= f.input :login, autofocus: true, autocomplete: "email or phone", class:"form-control", placeholder: "Email/Phone" %>
+
+
     <%= f.input :password, autocomplete: "current-password", class:"form-control" %>
-  </div>
+
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
        <%= f.input :remember_me,as: :boolean, inline_label: 'Yes, remember me' %>
-    </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    <%= f.submit "Log in", class: "btn btn-moveon" %>
 
-<%= render "workers/shared/links" %>
+<% end %>
