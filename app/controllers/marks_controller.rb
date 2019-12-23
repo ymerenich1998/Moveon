@@ -6,17 +6,17 @@ class MarksController < ApplicationController
   # GET /marks
   # GET /marks.json
   def index
-    @marks = Mark.all
+    @marks = Mark.all.order(:name)
   end
 
   # GET /marks/1
   # GET /marks/1.json
   def show
-    @models = @mark.models
+    @models = @mark.models.order(:name)
   end
 
   def select
-    @models = @mark.models
+    @models = @mark.models.order(:name)
   end
 
   # GET /marks/new

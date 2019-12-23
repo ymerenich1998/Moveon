@@ -6,13 +6,13 @@ class ModelsController < ApplicationController
   # GET /models
   # GET /models.json
   def index
-    @models = Model.all
+    @models = Model.all.order(:name)
   end
 
   # GET /models/1
   # GET /models/1.json
   def show
-    @vehicles = @model.vehicles
+    @vehicles = @model.vehicles.order(:number)
   end
 
   # GET /models/new
