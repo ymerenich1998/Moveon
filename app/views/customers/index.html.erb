@@ -8,17 +8,16 @@
       <th>Full name</th>
       <th>Phone</th>
       <th>Desc</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%= customer.full_name %></td>
+        <td><%= link_to customer.full_name, customer %></td>
         <td><%= customer.phone %></td>
         <td><%= customer.desc %></td>
-        <td><%= link_to 'Show', customer %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
       </tr>

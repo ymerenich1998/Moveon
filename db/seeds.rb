@@ -16,11 +16,18 @@
   end
 end
 
-Mark.create([
-              {
-                name: 'Audi'
-              },
-              {
-                name: 'Honda'
-              }
-            ])
+[
+  {
+    name: 'Audi',
+    models: %w[s1 s2]
+  },
+  {
+    name: 'Honda',
+    models: %w[s1 s2]
+  }
+].each do |mark|
+  m = Mark.find_or_create_by(name: mark[:name])
+  mark[:models].each do |model|
+    Model.find_or_create_by(name: model, mark_id: m.id)
+  end
+end

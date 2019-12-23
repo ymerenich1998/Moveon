@@ -1,23 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>ID:</strong>
+  <%=@order.id %>
+</p>
+
+<p>
   <strong>Worker:</strong>
-  <%= @order.worker_id %>
+  <%=link_to @order.worker.full_name,@order.worker %>
 </p>
 
 <p>
   <strong>Service:</strong>
-  <%= @order.service_id %>
+  <%=link_to @order.service.name,@order.service %>
 </p>
 
 <p>
   <strong>Customer:</strong>
-  <%= @order.customer_id %>
+  <%=link_to @order.customer.full_name, @order.customer %>
 </p>
 
 <p>
   <strong>Vehicle:</strong>
-  <%= @order.vehicle_id %>
+  <%=link_to @order.vehicle.full_name,@order.vehicle%>
 </p>
 
 <p>

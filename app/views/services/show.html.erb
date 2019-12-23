@@ -5,7 +5,8 @@
   <%= @service.name %>
 </p>
 
-<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Edit', edit_service_path(@service) %>
+|
 <%= link_to 'Back', services_path %>
 
 <h1>Orders</h1>
@@ -13,26 +14,25 @@
 <table class="table text-center">
   <thead class="thead-dark">
     <tr>
-      <th>worker</th>
-      <th>Service</th>
+      <th>ID</th>
+      <th>Worker</th>
       <th>Customer</th>
-      <th>vehicle</th>
+      <th>Vehicle</th>
       <th>Date</th>
       <th>Status</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.worker_id %></td>
-        <td><%= order.service_id %></td>
-        <td><%= order.customer_id %></td>
-        <td><%= order.vehicle_id %></td>
+        <td><%= link_to ordr.id, order %></td>
+        <td><%=link_to order.worker.full_name,order.worker %></td>
+        <td><%=link_to order.customer.full_name,order.customer %></td>
+        <td><%=link_to order.vehicle.full_name,order.vehicle %></td>
         <td><%= order.date %></td>
         <td><%= order.status %></td>
-        <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
       </tr>
