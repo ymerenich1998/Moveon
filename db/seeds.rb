@@ -19,11 +19,19 @@ end
 [
   {
     name: 'Audi',
-    models: %w[s1 s2]
+    models: %w[A1 A2 A3 A4 A5 A6]
   },
   {
     name: 'Honda',
-    models: %w[s1 s2]
+    models: %w[Civic]
+  },
+  {
+    name: 'BMW',
+    models: %w[M1 M2 M3 M4 M5 M6 M8 X3 X5]
+  },
+  {
+    name: 'LADA',
+    models: %w[2101 2102 2103 2104 2105 2106 2107 2108 2109 2116 2199]
   }
 ].each do |mark|
   m = Mark.find_or_create_by(name: mark[:name])
@@ -42,11 +50,23 @@ end
 
 [
   {
-    full_name: 'name1'
+    full_name: 'Vasya Pypkin',
+    phone: "0999999999",
+    address: "Minauska",
+    des: "Temp"
   },
   {
-    full_name: 'name2'
-  }
+    full_name: 'name2',
+    phone: "",
+    address: "",
+    des: ""
+  },
+  {
+    full_name: 'name1',
+    phone: "",
+    address: "",
+    des: ""
+  },
 ].each do |customer|
-  Customer.find_or_create_by(full_name: customer[:full_name])
+  Customer.find_or_create_by(full_name: customer[:full_name],phone: customer[:phone],address: customer[:address], des: customer[:des])
 end
