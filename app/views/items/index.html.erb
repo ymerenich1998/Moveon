@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Items</h1>
+
+<table class="table text-center">
+  <thead class="thead-dark">
+    <tr>
+      <th style="width: 10%"></th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td>
+          <%= link_to fa_icon("pen"), edit_item_path(item) %> <%= link_to fa_icon("trash"), item, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+        <td><%= item.name %></td>
+        <td><%= item.category %></td>
+        <td><%= item.price %></td>
+        <td><%= item.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_item_path, class:"btn btn-moveon" %>

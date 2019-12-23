@@ -4,5 +4,6 @@ class Order < ApplicationRecord
   belongs_to :worker
   belongs_to :vehicle
   belongs_to :customer
-  belongs_to :service
+  has_many :order_services
+  has_many :services, through: :order_services
 end
