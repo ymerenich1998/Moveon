@@ -31,3 +31,22 @@ end
     Model.find_or_create_by(name: model, mark_id: m.id)
   end
 end
+
+%w[
+  name1
+  name2
+  name3
+].each do |service|
+  Service.find_or_create_by(name: service)
+end
+
+[
+  {
+    full_name: 'name1'
+  },
+  {
+    full_name: 'name2'
+  }
+].each do |customer|
+  Customer.find_or_create_by(full_name: customer[:full_name])
+end

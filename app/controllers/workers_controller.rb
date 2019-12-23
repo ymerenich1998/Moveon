@@ -10,6 +10,7 @@ class WorkersController < ApplicationController
 
   def show
     redirect_to my_path if @worker.id == current_worker.id
+    @orders = @worker.orders
   end
 
   private

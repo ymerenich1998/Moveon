@@ -27,10 +27,10 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= link_to ordr.id, order %></td>
+        <td><%= link_to order.id, order %></td>
         <td><%=link_to order.worker.full_name,order.worker %></td>
         <td><%=link_to order.customer.full_name,order.customer %></td>
-        <td><%=link_to order.vehicle.full_name,order.vehicle %></td>
+        <td><%=link_to order.vehicle.name,order.vehicle %></td>
         <td><%= order.date %></td>
         <td><%= order.status %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>

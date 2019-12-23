@@ -40,7 +40,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%=link_to ordr.id, order %></td>
+        <td><%=link_to order.id, order %></td>
         <td><%=link_to order.worker.full_name,order.worker %></td>
         <td><%=link_to order.service.name,order.service %></td>
         <td><%=link_to order.customer.full_name,order.customer %></td>

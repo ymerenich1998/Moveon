@@ -8,7 +8,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.integer :service_id
       t.integer :customer_id
       t.date :date
-      t.integer :status
+      t.integer :status, null: false, default: 1
 
       t.timestamps
     end

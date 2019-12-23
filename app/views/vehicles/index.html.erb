@@ -18,10 +18,10 @@
   <tbody>
     <% @vehicles.each do |vehicle| %>
       <tr>
-        <td><%=link_to vehicle.number, vehicle_path(vehicle) %></td>
+        <td><%=link_to vehicle.number, vehicle %></td>
         <td><%= vehicle.vin %></td>
-        <td><%= vehicle.model.name %></td>
-        <td><%= vehicle.model.mark.name %></td>
+        <td><%=link_to vehicle.model.name,vehicle.model %></td>
+        <td><%=link_to vehicle.model.mark.name,vehicle.model.mark %></td>
         <td><%= vehicle.year %></td>
         <td><%= vehicle.colour %></td>
         <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>

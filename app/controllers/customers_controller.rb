@@ -12,7 +12,9 @@ class CustomersController < ApplicationController
 
   # GET /customers/1
   # GET /customers/1.json
-  def show; end
+  def show
+    @orders = @customer.orders
+  end
 
   # GET /customers/new
   def new
