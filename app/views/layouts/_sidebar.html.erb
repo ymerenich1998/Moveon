@@ -43,5 +43,15 @@
 <%= link_to models_path, class:"dropdown-item" do%><%=fa_icon "car-side"%>Моделі<%end%>
 </div>
 </li>
+
+<% if worker_signed_in? %>
+<hr>
+<li>
+<%= link_to destroy_worker_session_path, method: :delete do%>
+  <%=fa_icon "sign-out-alt"%>
+  <div class="nav-text">Log out</div>
+<%end%>
+</li>
+<%end%>
 </ul>
 </nav>
