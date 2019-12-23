@@ -2,7 +2,9 @@
 
 <p>
   <strong>Name:</strong>
+  <span class="rest-in-place" data-url="/models/<%=@model.id%>" data-object="model" data-attribute="name" data-placeholder="Enter a name">
   <%= @model.name %>
+  </span>
 </p>
 
 <p>
@@ -18,7 +20,7 @@
 <table class="table text-center">
   <thead class="thead-dark">
     <tr>
-      <th style="width: 8%"></th>
+      <th style="width: 10%"></th>
       <th>Number</th>
       <th>Vin</th>
       <th>Year</th>

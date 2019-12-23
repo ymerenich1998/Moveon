@@ -5,27 +5,28 @@
 <table class="table text-center">
   <thead class="thead-dark">
     <tr>
+      <th style="width: 10%"></th>
       <th>ID</th>
       <th>Service</th>
       <th>Customer</th>
       <th>Vehicle</th>
       <th>Date</th>
       <th>Status</th>
-      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @orders.each do |order| %>
       <tr>
+        <td>
+          <%= link_to fa_icon("pen"), edit_order_path(order) %> <%= link_to fa_icon("trash"), order, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
         <td><%=link_to order.id, order %></td>
         <td><%=link_to order.service.name,order.service %></td>
         <td><%=link_to order.customer.full_name,order.customer %></td>
         <td><%=link_to order.vehicle.full_name,order.vehicle %></td>
         <td><%= order.date %></td>
         <td><%= order.status %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

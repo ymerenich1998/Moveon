@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @mark.name %>
+  <strong>Name: </strong>
+  <span class="rest-in-place" data-url="/marks/<%=@mark.id%>" data-object="mark" data-attribute="name" data-placeholder="Enter a name">
+   <%= @mark.name %>
+  </span>
 </p>
 
-<%= link_to 'Edit', edit_mark_path(@mark) %> |
 <%= link_to 'Back', marks_path %>
 
 <h1>Models</h1>
@@ -13,7 +14,7 @@
 <table class="table text-center">
   <thead class="thead-dark">
     <tr>
-      <th style="width: 8%"></th>
+      <th style="width: 10%"></th>
       <th>Name</th>
     </tr>
   </thead>

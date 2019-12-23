@@ -1,4 +1,4 @@
-<nav id="sidebar">
+<nav id="sidebar" class="active">
   <div class="sidebar-header">
     <%= link_to root_path do %>
     <h3>
@@ -10,11 +10,11 @@
 <ul class="list-unstyled components">
   <li>
     <%= link_to vehicles_path do%>
-      <%=fa_icon "car"%>
-      <div class="nav-text">Авто</div>
+    <%=fa_icon "car"%>
+    <div class="nav-text">Авто</div>
 
-    <%end%>
-    </li>
+  <%end%>
+</li>
 <li>
   <%= link_to customers_path do%><%=fa_icon "portrait"%>
   <div class="nav-text">Клієнти</div>
@@ -38,9 +38,13 @@
 </div>
 </a>
 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-<%= link_to services_path, class:"dropdown-item" do%><%=fa_icon "cogs"%>Послуги<%end%>
-<%= link_to marks_path, class:"dropdown-item" do%><%=fa_icon "trademark"%>Марки<%end%>
-<%= link_to models_path, class:"dropdown-item" do%><%=fa_icon "car-side"%>Моделі<%end%>
+<%= link_to services_path, class:"dropdown-item" do%><%=fa_icon "cogs"%>
+<div class="nav-text">
+Послуги
+</div>
+<%end%>
+<%= link_to marks_path, class:"dropdown-item" do%><%=fa_icon "trademark"%><div class="nav-text">Марки</div><%end%>
+<%= link_to models_path, class:"dropdown-item" do%><%=fa_icon "car-side"%><div class="nav-text">Моделі</div><%end%>
 </div>
 </li>
 
@@ -48,10 +52,9 @@
 <hr>
 <li>
 <%= link_to destroy_worker_session_path, method: :delete do%>
-  <%=fa_icon "sign-out-alt"%>
-  <div class="nav-text">Log out</div>
+<%=fa_icon "sign-out-alt"%>
+<div class="nav-text">Log out</div>
 <%end%>
 </li>
 <%end%>
-</ul>
-</nav>
+</ul></nav>

@@ -26,13 +26,27 @@
 
 }
 
+.fa-trash{
+  color: #bd2130;
+  :hover{
+    color: red;
+  }
+}
+
+.fa-pen{
+  color: #ffc107;
+  :hover{
+    color: gold;
+  }
+}
+
 body {
     font-family: 'Fira Sans Condensed', sans-serif;
     background: #fafafa;
     svg{
       width: 18px!important;
       height: 18px!important;
-      margin-right: 0.6rem;
+      //margin-right: 0.6rem;
     }
 }
 
@@ -109,6 +123,11 @@ span {
   background-color: var(--sidbar);
   color: var(--alttext);
   transition: all 0.3s;
+  hr{
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+  }
   &.active {
     min-width: 80px;
     max-width: 80px;
@@ -141,11 +160,12 @@ span {
     }
   }
   .nav-text {
-    display: contents;
+    display: inline;
+    margin-left: 0.6rem
   }
   ul{
     &.components {
-        padding: 20px 0;
+        padding: 2px 0;
         //border-bottom: 1px solid #47748b;
     }
     li a {
