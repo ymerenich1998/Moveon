@@ -12,7 +12,9 @@ class ServicesController < ApplicationController
 
   # GET /services/1
   # GET /services/1.json
-  def show; end
+  def show
+    @orders = @service.orders
+  end
 
   # GET /services/new
   def new

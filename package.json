@@ -1,5 +1,7 @@
 {
   "name": "Moveon",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "quagga": "^0.12.1"
+  }
 }

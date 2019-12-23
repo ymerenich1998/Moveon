@@ -12,3 +12,35 @@
 
 <%= link_to 'Edit', edit_model_path(@model) %> |
 <%= link_to 'Back', models_path %>
+
+<h1>Vehicles</h1>
+
+<table class="table text-center">
+  <thead class="thead-dark">
+    <tr>
+      <th>Number</th>
+      <th>Vin</th>
+      <th>Model</th>
+      <th>Mark</th>
+      <th>Year</th>
+      <th>Colour</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.number %></td>
+        <td><%= vehicle.vin %></td>
+        <td><%= vehicle.model.name %></td>
+        <td><%= vehicle.model.mark.name %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= vehicle.colour %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

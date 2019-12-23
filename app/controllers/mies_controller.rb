@@ -5,5 +5,6 @@ class MiesController < ApplicationController
 
   def show
     @worker = current_worker
+    @orders = current_worker.orders
   end
 end
