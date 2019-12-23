@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_183254) do
+ActiveRecord::Schema.define(version: 2019_12_23_184243) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 2019_12_18_183254) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "price"
+    t.string "count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "marks", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -55,10 +64,17 @@ ActiveRecord::Schema.define(version: 2019_12_18_183254) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "order_services", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "service_id"
+    t.integer "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer "worker_id"
     t.integer "vehicle_id"
-    t.integer "service_id"
     t.integer "customer_id"
     t.date "date"
     t.integer "status", default: 1, null: false
@@ -68,6 +84,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_183254) do
 
   create_table "services", force: :cascade do |t|
     t.string "name"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

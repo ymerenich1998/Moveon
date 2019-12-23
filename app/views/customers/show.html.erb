@@ -30,7 +30,7 @@
       <th style="width: 10%"></th>
       <th>ID</th>
       <th>Worker</th>
-      <th>Service</th>
+      <th>Services</th>
       <th>Vehicle</th>
       <th>Date</th>
       <th>Status</th>
@@ -46,7 +46,7 @@
         </td>
         <td><%=link_to order.id, order %></td>
         <td><%=link_to order.worker.full_name,order.worker %></td>
-        <td><%=link_to order.service.name,order.service %></td>
+                <td><%=render order.services%></td>
         <td><%=link_to order.vehicle.name,order.vehicle %></td>
         <td><%= order.date %></td>
         <td><%= order.status %></td>

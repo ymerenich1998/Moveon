@@ -12,12 +12,18 @@
     <%= link_to vehicles_path do%>
     <%=fa_icon "car"%>
     <div class="nav-text">Авто</div>
-
   <%end%>
 </li>
 <li>
-  <%= link_to customers_path do%><%=fa_icon "portrait"%>
-  <div class="nav-text">Клієнти</div>
+  <%= link_to items_path do%>
+  <%=fa_icon "cubes"%>
+  <div class="nav-text">Запчастини</div>
+<%end%>
+</li>
+<li>
+<%= link_to customers_path do%>
+<%=fa_icon "portrait"%>
+<div class="nav-text">Клієнти</div>
 <%end%>
 </li>
 <li>
@@ -33,18 +39,18 @@
 <li>
 <a class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 <%=fa_icon "ellipsis-v"%>
-<div class="nav-text">Інше
-
-</div>
+<div class="nav-text">Інше</div>
 </a>
 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 <%= link_to services_path, class:"dropdown-item" do%><%=fa_icon "cogs"%>
-<div class="nav-text">
-Послуги
-</div>
+<div class="nav-text">Послуги</div>
 <%end%>
-<%= link_to marks_path, class:"dropdown-item" do%><%=fa_icon "trademark"%><div class="nav-text">Марки</div><%end%>
-<%= link_to models_path, class:"dropdown-item" do%><%=fa_icon "car-side"%><div class="nav-text">Моделі</div><%end%>
+<%= link_to marks_path, class:"dropdown-item" do%><%=fa_icon "trademark"%>
+<div class="nav-text">Марки</div>
+<%end%>
+<%= link_to models_path, class:"dropdown-item" do%><%=fa_icon "car-side"%>
+<div class="nav-text">Моделі</div>
+<%end%>
 </div>
 </li>
 
@@ -56,5 +62,4 @@
 <div class="nav-text">Log out</div>
 <%end%>
 </li>
-<%end%>
-</ul></nav>
+<%end%></ul> </nav>

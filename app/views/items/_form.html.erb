@@ -1,10 +1,11 @@
-<%= simple_form_for @service do |f| %>
+<%= simple_form_for(@item) do |f| %>
 <%= f.error_notification %>
 <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
 <%= f.input :name %>
-
 <%= f.input :category %>
+<%= f.input :price %>
+<%= f.input :count %>
 
-<%= f.submit class: "btn btn-moveon"%> or <%= link_to 'Back', services_path %>
+<%= f.button :submit, class: "btn btn-moveon" %> or <%= link_to 'Back', items_path %>
 <% end %>
