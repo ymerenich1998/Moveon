@@ -7,7 +7,7 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.all
+    @customers = Customer.all.order(:full_name)
   end
 
   # GET /customers/1
