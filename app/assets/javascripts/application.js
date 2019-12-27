@@ -75,4 +75,7 @@ function load_quagga(){
 
   }
 };
-$(document).on('turbolinks:load', load_quagga);
+$(document).on('turbolinks:load', function(){
+  load_quagga();
+  $('.rest-in-place').restInPlace()
+});

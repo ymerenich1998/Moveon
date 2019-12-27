@@ -23,20 +23,22 @@
   li {
      list-style: none;
    }
-
+   .lines{
+     background-color: var(--text);
+   }
 }
 
 .fa-trash{
-  color: #bd2130;
+  transition: 0.9s;
   :hover{
+    transition: 0.9s;
+
     color: red;
   }
 }
 
 .fa-pen{
-  color: #ffc107;
   :hover{
-    color: gold;
   }
 }
 
@@ -309,4 +311,11 @@ ul {
     #sidebarCollapse span {
         display: none;
     }
+}
+//****************************************
+.form-control{
+
+  &:focus{
+    border-bottom: 3px solid var(--test);
+  }
 }
